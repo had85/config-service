@@ -1,6 +1,7 @@
+server:
+  port: 8070
+  
 spring:
-  application:
-    name: eureka-server
   boot:
     admin:
       context-path: /admin
@@ -8,9 +9,6 @@ spring:
     loadbalancer:
        ribbon:
         enabled: false
-server:
-  port: 8070
-  
 eureka:
   instance:
     hostname: eurekaserver
