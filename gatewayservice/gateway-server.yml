@@ -8,10 +8,11 @@
      fetchRegistry: true
      serviceUrl:
        defaultZone: http://eurekaserver:8070/eureka/
-  cloud:
+  spring:     
+   cloud:
     loadbalancer:
-       ribbon:
-        enabled: false
+     ribbon:
+       enabled: false
     gateway:
         routes:
         - id: organization-service
