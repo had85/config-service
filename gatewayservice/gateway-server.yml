@@ -9,7 +9,9 @@
      serviceUrl:
        defaultZone: http://eurekaserver:8070/eureka/
   cloud:
-    loadbalancer.ribbon.enabled: false
+    loadbalancer:
+       ribbon:
+        enabled: false
     gateway:
         routes:
         - id: organization-service
