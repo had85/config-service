@@ -1,17 +1,16 @@
-server:
-  port: 8072
- 
-eureka:
-  instance:
-    preferIpAddress: true
-  client:
-    registerWithEureka: true
-    fetchRegistry: true
-    serviceUrl:
-      defaultZone: http://eurekaserver:8070/eureka/
-      
- 
 spring:
+  application:
+    name: gateway-server
+  server:
+    port: 8072
+  eureka:
+   instance:
+     preferIpAddress: true
+   client:
+     registerWithEureka: true
+     fetchRegistry: true
+     serviceUrl:
+       defaultZone: http://eurekaserver:8070/eureka/
   cloud:
     loadbalancer.ribbon.enabled: false
     gateway:
@@ -27,14 +26,9 @@ spring:
           predicates:
           - Path=/license/**
           filters:
-          - RewritePath=/license/(?<path>.*), /$\{path}
-
-
-       
-management:
-  endpoints:
-    web:
-      exposure:
-        include: "*"
-        
-        
+          - RewritePath=/license/(?<path>.*), /$\{path}       
+  management:
+    endpoints:
+      web:
+        exposure:
+          include: "*"
